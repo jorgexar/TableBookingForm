@@ -1,0 +1,240 @@
+:root{
+    --gold: #eccf6d;
+    --blue: rgb(19, 37, 97);
+}
+
+*{
+    font-family: Helvetica, sans-serif;
+}
+body{
+    /*background-color: rgb(48, 47, 47);*/
+    background: rgb(15, 19, 48);
+    
+    
+	
+    
+    
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    gap: 10px;
+    
+     
+}
+.tables-wrapper#map{
+    border: none;
+    background: rgba(184, 180, 204, 0.164);
+}
+@media only screen and (max-width: 768px){
+    .wrapper{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    table{
+        display: none;
+    };
+}
+
+.tables-wrapper{
+    position: relative;
+    border:2px solid #fff;
+    padding: 20px;
+    
+    
+}
+.tables-wrapper>h2{
+    text-align: center;
+    color: #fff;
+    background-color: black;
+    border: 1px solid var(--gold);
+    padding: 10px;
+    margin: 10px auto;
+}
+.table-row{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+}
+.table{
+    background-color: var(--blue);
+    min-width: 15%;
+    height: 60px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #fff;
+    border-color: var(--gold);
+    cursor: pointer;
+    position: relative;
+    transition:all 0.3s ease; 
+}
+.table:not(.reserved):hover{
+    background-color: rgb(9, 9, 204);
+    
+}
+.table:not(.reserved):active{
+    background-color: #020048;
+   
+}
+.reserved{
+    background: rgb(75, 2, 2);
+    opacity: 1;
+    color: rgb(243, 81, 81);
+    opacity: 0.1;
+
+}
+/*.reserved::after{
+    content: "Reserved";
+    background-color: rgb(255, 0, 0);
+    font-size: 12px;
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    opacity: 1;
+    transform: translate(50%,50%);
+    padding: 0px 10px;
+    border-radius: 25px;
+}*/
+.reserved:hover{
+    
+    cursor: auto;
+    
+}
+
+form{
+    background-color: var(--blue);
+    width: 300px;
+    padding: 20px;
+    margin: 0 auto;
+    border: 2px solid #fff;
+    
+}
+form:hover{
+    border-color: var(--gold);
+}
+fieldset{
+    border: none;
+    border-top: 1px solid var(--gold);
+    margin: 15px auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.inactive{
+    display: none;
+}
+legend{
+    position: relative;
+    background-color: black;
+    border:1px solid var(--gold);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px;
+    margin: 0 auto;
+       
+
+}
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    max-width: 30ch;
+}
+.inputBox label{
+    padding: 5px;
+    color: var(--gold);
+    font-size: 1.1rem;
+}
+.inputBox input,select{
+    font-weight: 100;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 5px;
+    background-color: transparent;
+}
+select option{
+    background-color: var(--blue);
+    
+}
+input:focus-visible{
+    outline: none;
+}
+.inputBox input:focus{
+   border: 2px solid var(--gold);
+   background-color: #020048;
+}
+button#availability{
+    align-self: center;
+    outline: none;
+    background-color: transparent;
+    border: 2px solid #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-top: 15px;
+    color: #fff;
+    position: relative;
+}
+button#availability:hover{
+    border-color: var(--gold);
+    color: var(--gold)
+}
+
+.cover{
+    position: absolute;
+    width: 0%;
+    height: 100%;
+    top:0;
+    right: 0;
+    background-color: var(--blue);
+    animation-name: cover;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function:ease-out;
+    z-index: 2;
+}
+
+.log{
+    position: relative;
+    
+    margin-top: 20px;
+    padding: 0;
+}
+
+table{
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    
+}
+thead>tr{
+    background-color: var(--blue);
+    color: var(--gold);
+    font-weight: 100;
+}
+td,th{
+    font-family:Helvetica;
+    font-size: 16px;
+    padding: 15px;
+}
+tbody tr:nth-child(odd){
+    background-color:#f5f1e8;
+}
+tbody tr:nth-child(even){
+    background-color:#a1aabd;
+}
+tbody tr:hover{
+    background-color: rgb(53, 90, 255);
+    color: #fff;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+@keyframes cover{
+    0%{width: 100%;};
+    100%{width: 0%;};
+  
+}

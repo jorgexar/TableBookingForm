@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaizen Booking</title>
+    <link rel="stylesheet" href="kbf-style.css">
+    <script src="kbf-script.js"></script>
+</head>
+<body>
+    <section class="wrapper">
+        <div class="form-wrapper">
+            <form action="">
+                <fieldset>
+                    <legend>Λεπτομέρειες κράτησης</legend>
+                    <div class="inputBox">
+                        <label for="reserve-date">Ημερομηνία</label>
+                        <input type="date" name="customer-reserve-date" id="reserve-date" required>
+                    </div>
+                    
+                    <button type="submit" style="display: none;">Hide</button>
+                    <button id="availability" disabled="true">Διαθεσιμότητα</button>
+                </fieldset>
+                <fieldset class="inactive" id="contact">
+                    <legend>Στοιχεία επικοινωνίας</legend>
+                    <div class="inputBox">
+                        <label for="first-name">Όνομα</label>
+                        <input type="text" minlength="4" maxlength="30" name="customer-first-name" id="first-name"  required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="last-name">Επώνυμο</label>
+                        <input type="text" name="customer-last-name" id="last-name" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="phone">Τηλέφωνο</label>
+                        <input type="tel" name="customer-phone" id="phone" pattern="^[69]+[0-9]{8}$"  required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="email">Email</label>
+                        <input type="email" name="customer-email" pattern="^[[:alnum:]]+([@]{1})[A-Za-z,0-9]+([.]{1})\w{2,}$" id="email" required>
+                    </div>
+                    <div class="inputBox">
+                        <label for="num-of-people">Άτομα</label>
+                        <input type="number" min="2" max="12" name="customer-num-of-people" id="num-of-people" required>
+                        
+                    </div>
+                </fieldset>
+                
+                
+            </form>
+           
+        </div>
+        <div class="tables-wrapper" id="table-wrapper">
+            <span class="cover"></span>
+            <h2 id="MapHeading">Τραπέζια</h2>
+            <div class="tables-wrapper" id="map">
+
+            </div>
+            <!--<div class="table-row">
+                <button class="table">1</button>
+                <button class="table">2</button>
+                <button class="table">3</button>
+                <button class="table">4</button>
+                <button class="table">5</button>
+
+                ^[A-Za-z]{4,30}$
+                [A-Za-z,0-9]+([@]{1})[A-Za-z,0-9]+([.]{1})+[A-Za-z]
+                ^[[:alnum:]]+([@]{1})[A-Za-z,0-9]+([.]{1})\w{2,}$
+                ^[69]+[0-9]{8}$
+            </div>-->
+            <div class="log">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Full Name</th>
+                            <th>Table</th>
+                            <th>Num of People</th>
+                            <th>Telephone</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logBody">
+                        <!-- <tr>
+                            <td>2023-12-25</td>
+                            <td>Jorge Xar</td>
+                            <td>12</td>
+                            <td>4</td>
+                            <td>6995099845</td>
+                        </tr> -->
+                        
+                    </tbody>
+                    
+                </table>
+            </div>
+            
+        </div>
+    </section>
+    
+</body>
+</html>
